@@ -87,7 +87,7 @@
 
 #document-head {
     border: 2px solid var(--border-subtle);
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: var(--bg-elevated);
 }
 
