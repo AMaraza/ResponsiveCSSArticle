@@ -1,8 +1,39 @@
 * {
+    background-color: var(--bg-page);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+ }
+
+ :root[data-theme="dark"] {
+     --bg-page: #0f172a;
+     --bg-surface: #111827;
+     --bg-elevated: #1f2933;
+
+     --text-primary: #e5e7b;
+     --text-secondary: #9ca3af;
+     --text-heading: #f9fafb;
+
+     --accent-primary: #38bdf8;
+     --accent-hover: #0ea5e9;
+
+     --border-subtle: #334155;
+ }
+
+ :root[data-theme="light"] {
+     --bg-page: #f8fafc;
+     --bg-surface: #ffffff;
+     --bg-elevated: #e5e7eb;
+
+     --text-primary: #1f2933;
+     --text-secondary: #4b5563;
+     --text-heading: #020617;
+
+     --accent-primary: #2563eb;
+     --accent-hover: #1d4ed8;
+
+     --border-subtle: #cbd5e1;
  }
 
  #resize-button-container {
@@ -15,6 +46,9 @@
      padding: 1em;
      width: 200px;
      margin: 1em;
+     background-color: lightgray;
+     cursor: pointer;
+     border-radius: 10px;
  }
 
  .resizable-viewport {
@@ -28,6 +62,7 @@
      container-type: size;
      container-name: viewport;
      display: block;
+     background-color: var(--bg-surface);
  }
 
 .resizable-viewport.mobile {
@@ -51,10 +86,17 @@
 }
 
 #document-head {
-    border-bottom: 2px solid black;
+    border: 2px solid var(--border-subtle);
+    border-radius: 5px;
+    background-color: var(--bg-elevated);
+}
+
+#content {
+    background-color: var(--bg-surface);
 }
 
 #title  {
+    color: var(--text-heading);
     text-align: center;
     font-size: clamp(2rem, 3cqw, 3.5rem);
     padding: 0.5rem;
@@ -62,48 +104,72 @@
 
 #subtitle {
     font-size: clamp(1rem, 2cqi, 2.5rem);
-    text-align: center;
     padding: 0.5rem;
+    text-align: center;
+    color: var(--text-secondary);
 }
 
 #intro {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    font-size: clamp(1rem, 1.5cqi, 2rem);
+    font-size: clamp(1rem, 1.7cqi, 2rem);
+    color: var(--text-heading);
 }
 
 
 #image-caption {
     text-align: center;
     font-weight: bold;
-    font-size: clamp(1rem, 2cqi, 2.5rem);
+    font-size: clamp(1rem, 2cqi, 2rem);
+    color: var(--text-secondary);
 }
 
 #quote {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     text-align: center;
+    font-size: clamp(1rem, 2cqi, 2rem);
+    color: var(--text-heading);
+    border: 2px solid var(--border-subtle);
+    padding: 1em;
+    border-radius: 10px;
 }
 
 #layout-sections {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+    border: 2px solid var(--border-subtle);
+    border-radius: 10px;
+}
+
+#hero-section {
+    border-radius: 10px;
+    border: 2px solid var(--border-subtle);
+    padding: 1em;
 }
 
 #section-title {
     text-align: center;
+    color: var(--text-heading);
 }
 
 #feature-list {
     padding: 1rem;
+    color: var(--text-secondary);
+    font-weight: bold;
 }
 
 
 
 #conclusion {
-    border-top: 2px solid black;
+    border: 2px solid var(--border-subtle);
     margin-top: 2rem;
     padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-size: clamp(1rem, 1.5cqi, 2rem);
+    color: var(--text-heading);
+    border-radius: 10px;
 }
 
 @container viewport (min-width: 300px) {
@@ -141,5 +207,51 @@
     .grid-image {
         width: 75%;
         margin-top: 1rem;
+    }
+
+    #feature-list {
+        margin-left: 5rem;
+    }
+}
+
+@container viewport (min-width: 1200px) {
+    #hero-section {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        margin-top: 2rem;
+    }
+    #image-container {
+        display: inline-block;
+        width: 45%;
+    }
+    #intro {
+        padding-left: 6rem;
+        padding-right: 4rem;
+    }
+
+    #inline-image {
+        width: 45cqi;
+        display: inline-block;
+    }
+
+    #image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+        gap: 15px;
+    }
+
+    .grid-image {
+        width: 100%;
+    }
+
+    #feature-list {
+        column-count: 2;
+        width: 50%;
+        column-gap: 100px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

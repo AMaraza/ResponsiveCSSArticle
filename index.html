@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +13,9 @@
             <button class="resize" id="laptop" onclick="ResizeElement(this)">Resize Laptop</button>
             <button class="resize" id="desktop" onclick="ResizeElement(this)">Resize Desktop</button>
             <button class="rotate" onclick="RotateViewport()">Rotate</button>
+            <button class="resize" id="theme" onclick="ChangeTheme()">Change Color Theme</button>
         </div>
-        <section class="resizable-viewport mobile">
+        <section class="resizable-viewport laptop">
             <header id="document-head">
                 <h1 id="title">Responsive Layout</h1>
                 <h2 id="subtitle">A single page demo showcasing adaptive layouts.</h2>
@@ -22,12 +23,12 @@
             <main id="content">
                 <section id="hero-section">
                     <p id="intro">
-                        This page demonstrates how long-form content can adapt across various viewport sizes. The layout emphasizes readibility, spacing, and image behavior rather than the subject matter itself. This mini project is my chance to practice responsive concepts, not just media query screen size breakpoints, but also using sizing functions like min, max, and clamp.
+                        This page demonstrates how long-form content can adapt across various viewport sizes. The layout emphasizes readibility, spacing, and image behavior rather than the subject matter itself. This mini project is my chance to practice responsive concepts, not just media query breakpoints, but also using sizing functions like min, max, and clamp.
                     </p>
-                </section>
-                <section id="image-container">
-                    <image id="inline-image" src="images/html.jpg"></image>
-                    <p id="image-caption">Auto scaling image with a max size cap</p>
+                    <section id="image-container">
+                        <image id="inline-image" src="images/html.jpg"></image>
+                        <p id="image-caption">Auto scaling image with a max size cap</p>
+                    </section>
                 </section>
 
                 <p id="quote">"Responsive design isn't about shrinking content - it's about restructuring it."</p>
