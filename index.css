@@ -2,6 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+ }
+
+ #resize-button-container {
+     display: flex;
+     justify-content: center;
+     width: 100vw;
+ }
+
+ #resize-button-container button{
+     padding: 1em;
+     width: 200px;
+     margin: 1em;
  }
 
  .resizable-viewport {
@@ -9,6 +22,12 @@
      margin-left: auto;
      margin-right: auto;
      border: 2px solid black;
+     overflow: scroll;
+     padding: 1em;
+     border-radius: 10px;
+     container-type: size;
+     container-name: viewport;
+     display: block;
  }
 
 .resizable-viewport.mobile {
@@ -31,4 +50,96 @@
     height: 900px;
 }
 
+#document-head {
+    border-bottom: 2px solid black;
+}
 
+#title  {
+    text-align: center;
+    font-size: clamp(2rem, 3cqw, 3.5rem);
+    padding: 0.5rem;
+}
+
+#subtitle {
+    font-size: clamp(1rem, 2cqi, 2.5rem);
+    text-align: center;
+    padding: 0.5rem;
+}
+
+#intro {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: clamp(1rem, 1.5cqi, 2rem);
+}
+
+
+#image-caption {
+    text-align: center;
+    font-weight: bold;
+    font-size: clamp(1rem, 2cqi, 2.5rem);
+}
+
+#quote {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#layout-sections {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#section-title {
+    text-align: center;
+}
+
+#feature-list {
+    padding: 1rem;
+}
+
+
+
+#conclusion {
+    border-top: 2px solid black;
+    margin-top: 2rem;
+    padding-top: 1rem;
+}
+
+@container viewport (min-width: 300px) {
+    #inline-image {
+        width: 100%;
+    }
+
+    .grid-image {
+        width: 100%;
+    }
+}
+
+@container viewport (min-width: 700px) {
+    #intro {
+        padding: 1.5rem;
+    }
+    #image-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #inline-image {
+        width: 75%;
+    }
+
+    #image-grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .grid-image {
+        width: 75%;
+        margin-top: 1rem;
+    }
+}

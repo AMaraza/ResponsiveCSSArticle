@@ -7,15 +7,57 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <button class="resize" id="mobile" onclick="ResizeElement(this)">Resize Mobile</button>
-        <button class="resize" id="tablet" onclick="ResizeElement(this)">Resize Tablet</button>
-        <button class="resize" id="laptop" onclick="ResizeElement(this)">Resize Laptop</button>
-        <button class="resize" id="desktop" onclick="ResizeElement(this)">Resize Desktop</button>
-        <button class="rotate" onclick="RotateViewport()">Rotate</button>
-        <section class="resizable-viewport desktop">
+        <div id="resize-button-container">
+            <button class="resize" id="mobile" onclick="ResizeElement(this)">Resize Mobile</button>
+            <button class="resize" id="tablet" onclick="ResizeElement(this)">Resize Tablet</button>
+            <button class="resize" id="laptop" onclick="ResizeElement(this)">Resize Laptop</button>
+            <button class="resize" id="desktop" onclick="ResizeElement(this)">Resize Desktop</button>
+            <button class="rotate" onclick="RotateViewport()">Rotate</button>
+        </div>
+        <section class="resizable-viewport mobile">
+            <header id="document-head">
+                <h1 id="title">Responsive Layout</h1>
+                <h2 id="subtitle">A single page demo showcasing adaptive layouts.</h2>
+            </header>
+            <main id="content">
+                <section id="hero-section">
+                    <p id="intro">
+                        This page demonstrates how long-form content can adapt across various viewport sizes. The layout emphasizes readibility, spacing, and image behavior rather than the subject matter itself. This mini project is my chance to practice responsive concepts, not just media query screen size breakpoints, but also using sizing functions like min, max, and clamp.
+                    </p>
+                </section>
+                <section id="image-container">
+                    <image id="inline-image" src="images/html.jpg"></image>
+                    <p id="image-caption">Auto scaling image with a max size cap</p>
+                </section>
 
+                <p id="quote">"Responsive design isn't about shrinking content - it's about restructuring it."</p>
+
+                <section id="layout-sections">
+                    <h4 id="section-title">This Page Includes</h4>
+                    <ul id="feature-list">
+                        <li>Hero Section with Title and Subtitle</li>
+                        <li>Intro Text Block</li>
+                        <li>Scaling Image with Caption</li>
+                        <li>Single line quote</li>
+                        <li>Feature List That Splits On Bigger Screens</li>
+                        <li>Image Gallery</li>
+                        <li>Footer with Conclusion Text</li>
+                    </ul>
+                </section>
+                
+                <section id="image-grid">
+                    <image class="grid-image" src="images/grid_image_1.jpg"></image>
+                    <image class="grid-image" src="images/grid_image_2.jpg"></image>
+                    <image class="grid-image" src="images/grid_image_3.jpg"></image>
+                    <image class="grid-image" src="images/grid_image_4.jpg"></image>
+                </section>
+
+                <footer id="conclusion">
+                    <p>This layout is intentionally light on content to focus on structure, responsiveness, and user experience.</p>
+                </footer>
+            </main>
         </section>
-
         <script src="script.js"></script>
+
     </body>
 </html>

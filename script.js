@@ -3,9 +3,11 @@ function ResizeElement(buttonElement) {
     const resizableContainer = document.querySelector('.resizable-viewport');
     const containerClasses = resizableContainer.classList;
     const buttonId = buttonElement.id;
-
+    resizableContainer.style.removeProperty('width');
+    resizableContainer.style.removeProperty('height');
     containerClasses.remove(containerClasses[1]);
     resizableContainer.classList.add(buttonId);
+    console.log("Resizing")
 }
 
 function RotateViewport() {
@@ -14,6 +16,8 @@ function RotateViewport() {
     const currentWidth = window.getComputedStyle(resizableContainer).width;
     const currentHeight = window.getComputedStyle(resizableContainer).height;
 
-    if (containerClasses.contains('desktop') || containerClasses.contains('laptop')) {
+    if (!containerClasses.contains('desktop') && !containerClasses.contains('laptop')) {
+        resizableContainer.style.width = currentHeight;
+        resizableContainer.style.height = currentWidth;
     }
 }
